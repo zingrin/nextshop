@@ -1,0 +1,57 @@
+"use client";
+import Link from "next/link";
+
+export default function Footer() {
+  return (
+    <footer className="bg-amber-500 text-white mt-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+          
+          {/* Brand Section */}
+          <div>
+            <h2 className="text-2xl font-bold">NextShop</h2>
+            <p className="mt-2 text-sm">
+              Your one-stop shop for all products.  
+              Fast delivery, best prices, and great quality.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/" className="hover:underline">Home</Link>
+              </li>
+              <li>
+                <Link href="/products" className="hover:underline">Products</Link>
+              </li>
+              <li>
+                <Link href="/addProducts" className="hover:underline">Add Products</Link>
+              </li>
+              
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-lg font-semibold mb-3">Contact Us</h3>
+            <p>Email: support@nextshop.com</p>
+            <p>Phone: +880 1234-567890</p>
+            <p>Address: Dhaka, Bangladesh</p>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="border-t border-amber-300 mt-6 pt-4 flex flex-col md:flex-row justify-between items-center text-sm">
+          <p>© {new Date().getFullYear()} NextShop. All Rights Reserved.</p>
+          <div className="flex space-x-4 mt-2 md:mt-0">
+            <a href="#" className="hover:text-gray-200">Facebook</a>
+            <a href="#" className="hover:text-gray-200">Twitter</a>
+            <a href="#" className="hover:text-gray-200">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
