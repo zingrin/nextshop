@@ -20,7 +20,6 @@ export default function Navbar() {
     <nav className="bg-amber-400 sticky top-0 shadow-md w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-
           {/* Logo */}
           <Link href="/" className="text-2xl font-bold text-white">
             NextShop
@@ -79,12 +78,13 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Link
-              href="/signin"
-              className="block px-4 py-2 bg-white text-amber-600 rounded-lg hover:bg-gray-100 transition text-center font-medium"
-              onClick={() => setIsOpen(false)}
-            >
-              Sign In
+            <Link href="/signin" passHref>
+              <a
+                onClick={() => setIsOpen(false)}
+                className="block px-4 py-2 bg-white text-amber-600 rounded-lg hover:bg-gray-100 transition text-center font-medium"
+              >
+                Sign In
+              </a>
             </Link>
           </div>
         </div>
