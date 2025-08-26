@@ -40,7 +40,7 @@ export default function Reviews() {
   const { name, role, rating, comment, avatar } = reviews[currentIndex];
 
   return (
-    <section className="bg-amber-50 py-16">
+    <section className="bg-amber-100 py-16">
       <div className="max-w-5xl mx-auto px-4 text-center">
         <h2 className="text-4xl font-bold text-amber-600 mb-8">What Our Customers Say</h2>
 
