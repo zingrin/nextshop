@@ -7,12 +7,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
           
-          {/* Brand Section */}
+          {/* About Section */}
           <div>
             <h2 className="text-2xl font-bold">NextShop</h2>
             <p className="mt-2 text-sm">
-              Your one-stop shop for all products.  
-              Fast delivery, best prices, and great quality.
+              NextShop is your one-stop online store for trendy products.  
+              We provide fast delivery, premium quality, and unbeatable prices.
             </p>
           </div>
 
@@ -29,7 +29,9 @@ export default function Footer() {
               <li>
                 <Link href="/addProducts" className="hover:underline">Add Products</Link>
               </li>
-              
+              <li>
+                <Link href="/about" className="hover:underline">About</Link>
+              </li>
             </ul>
           </div>
 
@@ -46,9 +48,9 @@ export default function Footer() {
         <div className="border-t border-amber-300 mt-6 pt-4 flex flex-col md:flex-row justify-between items-center text-sm">
           <p>© {new Date().getFullYear()} NextShop. All Rights Reserved.</p>
           <div className="flex space-x-4 mt-2 md:mt-0">
-            <a href="#" className="hover:text-gray-200">Facebook</a>
-            <a href="#" className="hover:text-gray-200">Twitter</a>
-            <a href="#" className="hover:text-gray-200">Instagram</a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">Facebook</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">Twitter</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">Instagram</a>
           </div>
         </div>
       </div>

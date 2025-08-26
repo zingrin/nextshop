@@ -1,7 +1,6 @@
 import Hero from "@/components/Hero";
-import Image from "next/image";
 import ProductsPage from "./products/page";
-import About from "@/components/About";
+import About from "./about/page";
 
 export default function Home() {
   return (

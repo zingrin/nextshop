@@ -1,22 +1,26 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
-  // Routes array
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Products", path: "/products" },
     { name: "Add Products", path: "/addProducts" },
+    { name: "About", path: "/about" },
   ];
+
+  const isActive = (path) => pathname === path;
 
   return (
     <nav className="bg-amber-500 sticky top-0 shadow-md w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          
+
           {/* Logo */}
           <Link href="/" className="text-2xl font-bold text-white">
             NextShop
@@ -28,7 +32,9 @@ export default function Navbar() {
               <Link
                 key={index}
                 href={link.path}
-                className="text-white hover:text-gray-100 font-medium transition"
+                className={`text-white font-medium transition hover:text-gray-100 ${
+                  isActive(link.path) ? "underline underline-offset-4" : ""
+                }`}
               >
                 {link.name}
               </Link>
@@ -65,7 +71,9 @@ export default function Navbar() {
               <Link
                 key={index}
                 href={link.path}
-                className="block text-white hover:text-gray-100 font-medium transition"
+                className={`block text-white font-medium transition hover:text-gray-100 ${
+                  isActive(link.path) ? "underline underline-offset-4" : ""
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
