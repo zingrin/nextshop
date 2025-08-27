@@ -31,8 +31,10 @@ export default function Navbar() {
               <Link
                 key={index}
                 href={link.path}
-                className={`text-white font-medium transition hover:text-gray-100 ${
-                  isActive(link.path) ? "underline underline-offset-4" : ""
+                className={`font-medium transition hover:text-gray-100 ${
+                  isActive(link.path)
+                    ? "underline underline-offset-4 text-black"
+                    : "text-white"
                 }`}
               >
                 {link.name}
@@ -55,6 +57,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-white text-2xl focus:outline-none"
+              aria-label="Toggle menu"
             >
               {isOpen ? "✖" : "☰"}
             </button>
@@ -63,32 +66,36 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-amber-400 shadow-md">
-          <div className="px-4 py-3 space-y-2">
-            {navLinks.map((link, index) => (
-              <Link
-                key={index}
-                href={link.path}
-                className={`block text-white font-medium transition hover:text-gray-100 ${
-                  isActive(link.path) ? "underline underline-offset-4" : ""
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link href="/signin" passHref>
-              <a
-                onClick={() => setIsOpen(false)}
-                className="block px-4 py-2 bg-white text-amber-600 rounded-lg hover:bg-gray-100 transition text-center font-medium"
-              >
-                Sign In
-              </a>
+      <div
+        className={`md:hidden bg-amber-400 shadow-md transition-all duration-300 ${
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+        }`}
+      >
+        <div className="px-4 py-3 space-y-2">
+          {navLinks.map((link, index) => (
+            <Link
+              key={index}
+              href={link.path}
+              className={`block font-medium transition hover:text-gray-100 ${
+                isActive(link.path)
+                  ? "underline underline-offset-4 text-black"
+                  : "text-white"
+              }`}
+              onClick={() => setIsOpen(false)}
+            >
+              {link.name}
             </Link>
-          </div>
+          ))}
+          {/* Mobile Sign In */}
+          <Link
+            href="/signin"
+            className="block px-4 py-2 bg-white text-amber-600 rounded-lg hover:bg-gray-100 transition text-center font-medium"
+            onClick={() => setIsOpen(false)}
+          >
+            Sign In
+          </Link>
         </div>
-      )}
+      </div>
     </nav>
   );
 }

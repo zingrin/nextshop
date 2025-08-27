@@ -1,9 +1,10 @@
 "use client";
 import Link from "next/link";
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-amber-400 text-white mt-10">
+    <footer className="bg-amber-400 text-white dark:bg-gray-900 dark:text-gray-300 mt-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
           
@@ -20,18 +21,10 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="/" className="hover:underline">Home</Link>
-              </li>
-              <li>
-                <Link href="/products" className="hover:underline">Products</Link>
-              </li>
-              <li>
-                <Link href="/addProducts" className="hover:underline">Add Products</Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:underline">About</Link>
-              </li>
+              <li><Link href="/" className="hover:underline">Home</Link></li>
+              <li><Link href="/products" className="hover:underline">Products</Link></li>
+              <li><Link href="/addProducts" className="hover:underline">Add Products</Link></li>
+              <li><Link href="/about" className="hover:underline">About</Link></li>
             </ul>
           </div>
 
@@ -45,12 +38,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-amber-300 mt-6 pt-4 flex flex-col md:flex-row justify-between items-center text-sm">
+        <div className="border-t border-amber-300 dark:border-gray-700 mt-6 pt-4 flex flex-col md:flex-row justify-between items-center text-sm">
           <p>© {new Date().getFullYear()} NextShop. All Rights Reserved.</p>
-          <div className="flex space-x-4 mt-2 md:mt-0">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">Facebook</a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">Twitter</a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">Instagram</a>
+          <div className="flex space-x-4 mt-2 md:mt-0 text-xl">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200"><FaFacebook /></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200"><FaTwitter /></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200"><FaInstagram /></a>
           </div>
         </div>
       </div>
