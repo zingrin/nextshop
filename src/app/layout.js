@@ -23,15 +23,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable}`}
         suppressHydrationWarning
       >
-        <Navbar></Navbar>
-        <main> {children}</main>
+        <Navbar />
+        <main className="p-10">{children}</main>
         <Toaster position="top-right" reverseOrder={false} />
-
-        <Footer></Footer>
+        <Footer />
       </body>
+
     </html>
   );
 }
